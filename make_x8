@@ -1,0 +1,74 @@
+#!/usr/bin/python
+
+import pybel
+import copy
+import numpy as np
+
+from sys import argv
+
+def calc_com(mol):
+
+    mol_mass = 0.0
+    com = np.zeros(3)
+
+    for atom in mol.atoms:
+        mol_mass += atom.atomicmass
+        com += np.array(atom.coords) * atom.atomicmass
+
+    com /= mol_mass
+
+    return com
+
+
+c_xyz = argv[1]
+a_xyz = c_xyz.replace("_c.xyz", "_a.xyz")
+b_xyz = c_xyz.replace("_c.xyz", "_b.xyz")
+
+distances = np.array([0.90,   0.95,  1.00,  1.10,  1.25,  1.50,  2.00])
+distance_names =     ["090", "095", "100", "110", "125", "150", "200"]
+
+a = pybel.readfile("xyz", a_xyz).next()
+b = pybel.readfile("xyz", b_xyz).next()
+
+min_distance = float("inf")
+
+com_a = calc_com(a)
+com_b = calc_com(b)
+
+com_vector = com_b - com_a
+
+
+
+for i, distance in enumerate(distances):
+
+    output = ""
+
+    output += str(len(a.atoms) + len(b.atoms)) + "\n"
+    
+    atom_id = 0
+
+    for atom in a.atoms:
+
+        atom_type = str(atom.type)[0]
+        xyz = np.array(atom.coords)
+
+        output += "\n %s  %20.12f %20.12f %20.12f" % (atom_type, \
+                xyz[0], xyz[1], xyz[2])
+
+    for atom in b.atoms:
+
+        atom_type = str(atom.type)[0]
+        xyz = np.array(atom.coords) - com_vector + com_vector * distance
+
+        output += "\n %s  %20.12f %20.12f %20.12f" % (atom_type, \
+                xyz[0], xyz[1], xyz[2])
+
+    output_filename = "ionic_x8/" + \
+        c_xyz.replace("_c.xyz", "_c%s.xyz" % distance_names[i])
+
+    f = open(output_filename, "w")
+    f.write(output)
+    f.close()
+
+    print output
+

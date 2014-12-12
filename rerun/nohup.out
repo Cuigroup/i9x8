@@ -1,0 +1,46 @@
+ssh: connect to host compute-1-30 port 22: No route to host
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+ssh: connect to host compute-1-30 port 22: No route to host
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+/home/andersx/.bashrc: line 4: /opt/intel/composer_xe_2013.5.192/bin/compilervars.sh: No such file or directory
+ Running jobs:
+--------------
+  1723163
+  1723528
+  1723663
+  1723664
+  1723665
+  1723666
+
+compute-1-30
+No garbage /scratch/ dirs
+compute-1-31
+Found scratch dir: /scratch/1723663.phoenix.chem.wisc.edu ... [32min use![0m
+compute-1-32
+Found scratch dir: /scratch/1723528.phoenix.chem.wisc.edu ... [32min use![0m
+compute-1-33
+Found scratch dir: /scratch/1723664.phoenix.chem.wisc.edu ... [32min use![0m
+compute-1-34
+Found scratch dir: /scratch/1723665.phoenix.chem.wisc.edu ... [32min use![0m
+compute-1-35
+Found scratch dir: /scratch/1723666.phoenix.chem.wisc.edu ... [32min use![0m
+Cleaning /dev/shm ...
+compute-1-30
+No garbage /dev/shm/ dirs
+compute-1-31
+No garbage /dev/shm/ dirs
+compute-1-32
+No garbage /dev/shm/ dirs
+compute-1-33
+No garbage /dev/shm/ dirs
+compute-1-34
+No garbage /dev/shm/ dirs
+compute-1-35
+No garbage /dev/shm/ dirs
